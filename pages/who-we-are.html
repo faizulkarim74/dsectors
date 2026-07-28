@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Who We Are — Board of Directors | Dsectors Services Limited</title>
+  <meta name="description" content="Meet the Board of Directors of Dsectors Services Limited — senior development practitioners with experience across the World Bank, USAID, UN Women, UNAIDS, Oxfam and Save the Children." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%231a6fd8'/><text y='24' x='4' font-size='22' font-weight='900' fill='white' font-family='Inter'>D</text></svg>" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    /* ── Page-specific enhancements ── */
+    .hero-quote {
+      font-family: var(--f-display);
+      font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+      font-style: italic;
+      color: var(--text-muted);
+      border-left: 3px solid var(--teal);
+      padding-left: 1.5rem;
+      line-height: 1.8;
+      max-width: 640px;
+      margin: 2rem auto 0;
+    }
+
+    /* ── Photo-less placeholder ── */
+    .dir-photo-placeholder {
+      width: 100%; height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--surface-3) 0%, var(--surface-2) 100%);
+      font-size: 5rem;
+    }
+
+    /* ── Expertise Bar ── */
+    .exp-bars { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem; }
+    .exp-bar-item { display: flex; flex-direction: column; gap: 0.25rem; }
+    .exp-bar-label { font-size: 0.7rem; color: var(--text-dim); font-family: var(--f-mono); letter-spacing: 0.06em; display: flex; justify-content: space-between; }
+    .exp-bar-track { height: 3px; background: var(--surface-3); border-radius: 3px; overflow: hidden; }
+    .exp-bar-fill  { height: 100%; background: var(--g-primary); border-radius: 3px; width: 0; transition: width 1.5s var(--ease-out-expo); }
+
+    /* ── Director Number ── */
+    .dir-number {
+      position: absolute;
+      top: 1.25rem; right: 1.25rem;
+      font-family: var(--f-mono);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--text-dim);
+      background: var(--surface-3);
+      padding: 0.25rem 0.55rem;
+      border-radius: var(--r-full);
+      z-index: 5;
+    }
+
+    /* ── Card glow on hover ── */
+    .dir-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: radial-gradient(circle at var(--mx,50%) var(--my,50%), rgba(33,117,109,0.06) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.4s;
+      pointer-events: none;
+    }
+
+    .dir-card:hover::after { opacity: 1; }
+
+    /* ── Institution links ── */
+    .dir-card__links {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+
+    .dir-card__link-btn {
+      padding: 0.25rem 0.7rem;
+      background: rgba(33,117,109,0.08);
+      border: 1px solid rgba(33,117,109,0.18);
+      border-radius: var(--r-full);
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: var(--teal);
+      transition: all var(--dur-fast);
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .dir-card__link-btn:hover { background: var(--teal); border-color: var(--teal); color: #fff; }
+
+    /* ── Accomplishment Pills ── */
+    .accomplishment-pills {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin: 3rem 0;
+    }
+
+    .acc-pill {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-md);
+      border-left: 2px solid var(--teal);
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      transition: all var(--dur-fast);
+    }
+
+    .acc-pill:hover {
+      background: var(--surface-2);
+      border-left-color: var(--teal);
+      color: var(--text);
+      transform: translateX(4px);
+    }
+
+    .acc-pill::before { content: '→'; color: var(--teal); font-size: 0.8rem; flex-shrink: 0; }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+     INFO BAR
+════════════════════════════════════════ -->
+<div class="info-bar" role="complementary" aria-label="Office information">
+  <div class="info-bar__group">
+    <span class="info-bar__item"><span class="info-bar__icon" aria-hidden="true">📍</span>179/3 (2nd Floor), Fakirerpool, Motijheel, Dhaka-1000, Bangladesh</span>
+    <a href="tel:+8801752578888" class="info-bar__item"><span class="info-bar__icon" aria-hidden="true">📞</span>+880 1752 578888</a>
+  </div>
+  <div class="info-bar__group">
+    <span class="info-bar__item"><span class="info-bar__icon" aria-hidden="true">🕐</span>Sunday – Thursday, 9:00 AM – 5:00 PM</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     NAVIGATION
+════════════════════════════════════════ -->
+<nav class="nav scrolled" id="main-nav" role="navigation" aria-label="Main navigation">
+  <div class="nav__inner">
+    <a href="../index.html" class="nav__logo">
+      <img src="../images/dsectors-logo.png" alt="Dsectors Services Limited" class="nav__logo-img" />
+    </a>
+
+    <div class="nav__links">
+      <a href="../index.html" class="nav__link" data-page="index.html">Home</a>
+
+      <div class="nav__item">
+        <button class="nav__link nav__link--parent" aria-haspopup="true" aria-expanded="false">About Us
+          <svg class="caret" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2 3.5 5 6.5 8 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="nav__dropdown" role="menu">
+          <a href="who-we-are.html">Who We Are</a>
+          <a href="who-we-are.html#board">Board of Directors</a>
+          <a href="../index.html#approach">Our Approach &amp; Values</a>
+        </div>
+      </div>
+
+      <div class="nav__item">
+        <button class="nav__link nav__link--parent" aria-haspopup="true" aria-expanded="false">Services
+          <svg class="caret" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2 3.5 5 6.5 8 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="nav__dropdown" role="menu">
+          <a href="services.html#svc-research">Research &amp; Studies</a>
+          <a href="services.html#svc-mel">Monitoring, Evaluation &amp; Learning</a>
+          <a href="services.html#svc-gender">GESI &amp; Safeguards</a>
+          <a href="services.html#svc-climate">Climate &amp; DRR</a>
+          <a href="services.html#svc-comms">Strategic Communications</a>
+          <a href="services.html#svc-digital">Digital Transformation &amp; AI</a>
+        </div>
+      </div>
+
+      <div class="nav__item">
+        <button class="nav__link nav__link--parent" aria-haspopup="true" aria-expanded="false">Thematic Expertise
+          <svg class="caret" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2 3.5 5 6.5 8 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="nav__dropdown" role="menu">
+          <a href="thematic.html#health">Health &amp; Key Populations</a>
+          <a href="thematic.html#gender">Gender &amp; GBV</a>
+          <a href="thematic.html#governance">Governance &amp; Human Rights</a>
+          <a href="thematic.html#wash">WASH &amp; Food Security</a>
+          <a href="thematic.html#inclusion">Social Inclusion</a>
+        </div>
+      </div>
+
+      <a href="clients.html" class="nav__link" data-page="clients.html">Institutional Experience</a>
+      <a href="contact.html" class="nav__link nav__cta-btn" data-page="contact.html">Contact &amp; Procurement</a>
+    </div>
+    <button class="nav__hamburger" id="nav-ham" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="nav__mobile" id="nav-mobile">
+    <a href="../index.html" class="nav__link">Home</a>
+    <div class="nav__mobile-group">
+      <div class="nav__mobile-group-title">About Us</div>
+      <a href="who-we-are.html">Who We Are</a>
+      <a href="who-we-are.html#board">Board of Directors</a>
+      <a href="../index.html#approach">Our Approach &amp; Values</a>
+    </div>
+    <div class="nav__mobile-group">
+      <div class="nav__mobile-group-title">Services</div>
+      <a href="services.html#svc-research">Research &amp; Studies</a>
+      <a href="services.html#svc-mel">Monitoring, Evaluation &amp; Learning</a>
+      <a href="services.html#svc-gender">GESI &amp; Safeguards</a>
+      <a href="services.html#svc-climate">Climate &amp; DRR</a>
+      <a href="services.html#svc-comms">Strategic Communications</a>
+      <a href="services.html#svc-digital">Digital Transformation &amp; AI</a>
+    </div>
+    <div class="nav__mobile-group">
+      <div class="nav__mobile-group-title">Thematic Expertise</div>
+      <a href="thematic.html#health">Health &amp; Key Populations</a>
+      <a href="thematic.html#gender">Gender &amp; GBV</a>
+      <a href="thematic.html#governance">Governance &amp; Human Rights</a>
+      <a href="thematic.html#wash">WASH &amp; Food Security</a>
+      <a href="thematic.html#inclusion">Social Inclusion</a>
+    </div>
+    <a href="clients.html" class="nav__link">Institutional Experience</a>
+    <a href="contact.html" class="nav__link">Contact &amp; Procurement</a>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════
+     PAGE HERO
+════════════════════════════════════════ -->
+<section class="directors-hero" aria-label="Who We Are page hero">
+  <div class="directors-hero__grid-lines" aria-hidden="true"></div>
+
+  <!-- Orbs -->
+  <div class="hero__orb hero__orb--1" style="opacity:0.1;" aria-hidden="true"></div>
+  <div class="hero__orb hero__orb--2" style="opacity:0.08;" aria-hidden="true"></div>
+
+  <div class="container directors-hero__content">
+    <div class="section-label" style="justify-content:center;">The Board of Directors</div>
+    <h1 class="t-display gradient-text" style="margin:1rem auto 1.5rem;max-width:800px;">
+      Senior Practitioners.<br>One Firm.
+    </h1>
+    <p style="font-size:1.1rem;color:var(--text-muted);max-width:680px;margin:0 auto 2rem;line-height:1.9;">
+      Dsectors is governed by a five-member Board whose directors remain active practitioners. The consultancy and project experience they carry is made directly available to Dsectors' clients.
+    </p>
+
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:3rem;">
+      <span class="badge badge--blue">World Bank · USAID · UN Women</span>
+      <span class="badge badge--teal">27+ Years Field Experience</span>
+      <span class="badge badge--gold">~$3 Billion Portfolio</span>
+    </div>
+
+    <blockquote class="hero-quote">
+      "The result is a firm that can design a study, secure ethical clearance, reach key populations, analyse and write to donor standard, communicate the findings at scale, and build the digital systems that carry the results into practice — under one contract."
+    </blockquote>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     WHO WE ARE — HUB
+════════════════════════════════════════ -->
+<section class="section--sm" aria-label="Who we are, at a glance">
+  <div class="container">
+    <div class="hub-grid">
+      <a href="#board" class="hub-card">
+        <div class="hub-card__icon hero__metric-icon--blue">🧑‍💼</div>
+        <div class="hub-card__title">The Board</div>
+        <p class="hub-card__desc">Five directors, all active practitioners, covering research, gender, climate, digital and programme design.</p>
+        <span class="hub-card__link">Find out more <span class="arrow">→</span></span>
+      </a>
+      <a href="#accomplishments" class="hub-card">
+        <div class="hub-card__icon hero__metric-icon--teal">📈</div>
+        <div class="hub-card__title">Collective Track Record</div>
+        <p class="hub-card__desc">What this Board carries directly into every assignment — from USAID portfolio design to national campaigns.</p>
+        <span class="hub-card__link">Find out more <span class="arrow">→</span></span>
+      </a>
+      <a href="../index.html#mission" class="hub-card">
+        <div class="hub-card__icon hero__metric-icon--gold">🎯</div>
+        <div class="hub-card__title">Mission &amp; Values</div>
+        <p class="hub-card__desc">Why Dsectors exists, and the principles — integrity, rigour, inclusion — that govern how we work.</p>
+        <span class="hub-card__link">Find out more <span class="arrow">→</span></span>
+      </a>
+      <a href="services.html" class="hub-card">
+        <div class="hub-card__icon hero__metric-icon--violet">🧭</div>
+        <div class="hub-card__title">Our Services</div>
+        <p class="hub-card__desc">Ten integrated service lines, from research and MEL to digital transformation and capacity building.</p>
+        <span class="hub-card__link">Find out more <span class="arrow">→</span></span>
+      </a>
+      <a href="clients.html" class="hub-card">
+        <div class="hub-card__icon hero__metric-icon--blue">🤝</div>
+        <div class="hub-card__title">Partners &amp; Clients</div>
+        <p class="hub-card__desc">50+ institutions our directors have worked with directly — multilaterals, UN agencies and donors.</p>
+        <span class="hub-card__link">Find out more <span class="arrow">→</span></span>
+      </a>
+      <a href="contact.html" class="hub-card">
+        <div class="hub-card__icon hero__metric-icon--teal">✉️</div>
+        <div class="hub-card__title">Get in Touch</div>
+        <p class="hub-card__desc">Start a conversation about an assignment, a proposal, or a prequalification inquiry.</p>
+        <span class="hub-card__link">Find out more <span class="arrow">→</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     KEY ACCOMPLISHMENTS STRIP
+════════════════════════════════════════ -->
+<div class="ticker-section" aria-label="Key accomplishments">
+  <div class="ticker-label">Collective Board Credentials</div>
+  <div class="ticker-track" id="ticker-track">
+    <div class="ticker-item">240 USAID Projects Designed · ~$3B</div>
+    <div class="ticker-item">50+ World Bank Sovereign Operations</div>
+    <div class="ticker-item">60 Million People Reached via Campaigns</div>
+    <div class="ticker-item">27 Years Gender &amp; DRR Leadership</div>
+    <div class="ticker-item">35+ ERP Implementations Globally</div>
+    <div class="ticker-item">30+ Research Studies Led</div>
+    <div class="ticker-item">Fulbright Scholar · USAID Awards</div>
+    <div class="ticker-item">IFC Performance Standards Expertise</div>
+    <div class="ticker-item">National HIV Campaign · MoHFW</div>
+    <div class="ticker-item">Odoo Certified · AI Fluency Certified</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     DIRECTORS
+════════════════════════════════════════ -->
+<section class="directors-section section" id="board" aria-label="Directors profiles">
+  <div class="container">
+
+    <div class="directors-intro reveal">
+      <div class="section-label" style="justify-content:center;">Active Practitioners</div>
+      <h2 class="t-h2" style="margin-bottom:1.5rem;">Meet the <em class="gradient-text">Experts</em></h2>
+      <p>Each expert brings deep institutional knowledge from the donor side — as designers, evaluators, specialists and implementers of the world's largest development programmes.</p>
+    </div>
+
+    <!-- ── FEATURED: Chairperson + MD ── -->
+    <div class="directors__featured" aria-label="Chairperson and Managing Director">
+
+      <!-- Musharrat Sharmee Hossain — Chairperson -->
+      <article class="dir-card dir-card--featured dir-card--musharrat reveal delay-1" id="dir-musharrat">
+        <div class="dir-card__highlight" aria-hidden="true"></div>
+        <div class="dir-number" aria-label="Director 1 of 5">01 / 05</div>
+
+        <div class="dir-card__photo-wrap">
+          <img src="../images/Musharrat Sharmee Hossain.jpg"
+               alt="Musharrat Sharmee Hossain, Chairperson, Dsectors Services Limited"
+               class="dir-card__photo"
+               loading="eager"
+               onerror="this.closest('.dir-card__photo-wrap').innerHTML='<div class=\'dir-photo-placeholder\'>👩‍🎓</div>';" />
+          <div class="dir-card__photo-grad" aria-hidden="true"></div>
+          <div class="dir-card__photo-side">
+            <span class="badge badge--gold" style="font-size:0.65rem;">Chairperson</span>
+          </div>
+        </div>
+
+        <div class="dir-card__body">
+          <div class="dir-card__role-badge">
+            <span class="badge badge--blue">Board Chair</span>
+          </div>
+          <h2 class="dir-card__name">Musharrat Sharmee Hossain</h2>
+          <div class="dir-card__title-line">Gender Studies · Media Analysis · Academic Research</div>
+          <div class="dir-card__institution">Senior Lecturer, Dept. of English &amp; Modern Languages, North South University</div>
+
+          <div class="dir-card__expertise-chips">
+            <span class="dir-chip">Gender Studies</span>
+            <span class="dir-chip">Political Discourse</span>
+            <span class="dir-chip">Media Analysis</span>
+            <span class="dir-chip">GBV Advocacy</span>
+            <span class="dir-chip">Critical Discourse Analysis</span>
+            <span class="dir-chip">Fulbright Scholar</span>
+          </div>
+
+          <p class="dir-card__summary">
+            An academic researcher and educator specialising in gender studies, social media, political discourse and critical discourse analysis. Holds M.A. from Oklahoma State University (TESL/Linguistics) and M.A. from University of Dhaka. Has taught at North South University, University of Minnesota Duluth, Oklahoma State University and Rutgers University as a Fulbright FLTA. Engaged with DW Akademie, Friedrich Ebert Stiftung and the Young Feminist Network. Research presented at NWSA (Minneapolis, 2022) and WEEF-GEDC (Barcelona, 2021).
+          </p>
+        </div>
+
+        <div class="dir-card__footer">
+          <div class="dir-card__exp">
+            <span class="dir-card__years-icon">⏱</span>
+            15+ Years
+            <div class="dir-card__exp-bar">
+              <div class="dir-card__exp-fill" style="width:0" data-width="70%"></div>
+            </div>
+          </div>
+          <button class="dir-card__view-btn" data-open-dir="musharrat" aria-label="View full profile of Musharrat Sharmee Hossain">
+            Full Profile →
+          </button>
+        </div>
+      </article>
+
+      <!-- Faizul Karim — Managing Director -->
+      <article class="dir-card dir-card--featured dir-card--faizul reveal delay-2" id="dir-faizul">
+        <div class="dir-card__highlight" aria-hidden="true"></div>
+        <div class="dir-number" aria-label="Director 2 of 5">02 / 05</div>
+
+        <div class="dir-card__photo-wrap">
+          <img src="../images/Faizul Karim.jpeg"
+               alt="Faizul Karim, Managing Director, Dsectors Services Limited"
+               class="dir-card__photo"
+               loading="eager"
+               onerror="this.closest('.dir-card__photo-wrap').innerHTML='<div class=\'dir-photo-placeholder\'>👨‍💼</div>';" />
+          <div class="dir-card__photo-grad" aria-hidden="true"></div>
+          <div class="dir-card__photo-side">
+            <span class="badge badge--teal" style="font-size:0.65rem;">Managing Director &amp; CEO</span>
+          </div>
+        </div>
+
+        <div class="dir-card__body">
+          <div class="dir-card__role-badge">
+            <span class="badge badge--teal">Managing Director &amp; CEO</span>
+          </div>
+          <h2 class="dir-card__name">Faizul Karim</h2>
+          <div class="dir-card__title-line">Research · Communications · Knowledge Management</div>
+          <div class="dir-card__institution">Development Communications &amp; Research Specialist — 20+ Years</div>
+
+          <div class="dir-card__expertise-chips">
+            <span class="dir-chip">World Bank</span>
+            <span class="dir-chip">UNAIDS</span>
+            <span class="dir-chip">Strategic Comms</span>
+            <span class="dir-chip">HIV/Key Populations</span>
+            <span class="dir-chip">Research Studies</span>
+            <span class="dir-chip">Citizen Journalism</span>
+          </div>
+
+          <p class="dir-card__summary">
+            Over 20 years in communications, research and stakeholder engagement. Led/contributed to 30+ research studies across health, gender, human rights and justice. His national campaigns — including MoHFW's 'Banchte Hole Jante Hobe' — reached 60 million people. National Consultant for UNAIDS; World Bank collaborator. Architect of blog.bdnews24.com, Bangladesh's first citizen-journalism platform. Presenter at 20th, 22nd, 23rd International AIDS Conferences.
+          </p>
+        </div>
+
+        <div class="dir-card__footer">
+          <div class="dir-card__exp">
+            <span class="dir-card__years-icon">⏱</span>
+            20+ Years
+            <div class="dir-card__exp-bar">
+              <div class="dir-card__exp-fill" style="width:0" data-width="90%"></div>
+            </div>
+          </div>
+          <button class="dir-card__view-btn" data-open-dir="faizul" aria-label="View full profile of Faizul Karim">
+            Full Profile →
+          </button>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- ── ROW 2: Three Directors ── -->
+    <div class="directors__row" aria-label="Directors">
+
+      <!-- Sadiq M. Alam -->
+      <article class="dir-card dir-card--standard dir-card--sadiq reveal delay-1" id="dir-sadiq">
+        <div class="dir-card__highlight" aria-hidden="true"></div>
+        <div class="dir-number" aria-label="Director 3 of 5">03 / 05</div>
+
+        <div class="dir-card__photo-wrap">
+          <img src="../images/Sadiq M Alam.jpg"
+               alt="Sadiq M. Alam, Director, Dsectors Services Limited"
+               class="dir-card__photo"
+               loading="lazy"
+               onerror="this.closest('.dir-card__photo-wrap').innerHTML='<div class=\'dir-photo-placeholder\'>👨‍💻</div>';" />
+          <div class="dir-card__photo-grad" aria-hidden="true"></div>
+          <div class="dir-card__photo-side">
+            <span class="badge badge--violet" style="font-size:0.62rem;">Director</span>
+          </div>
+        </div>
+
+        <div class="dir-card__body">
+          <div class="dir-card__role-badge">
+            <span class="badge badge--violet">Director · Digital &amp; AI</span>
+          </div>
+          <h3 class="dir-card__name">Sadiq M. Alam</h3>
+          <div class="dir-card__title-line">Enterprise Architecture · ERP · AI Integration</div>
+          <div class="dir-card__institution">COO, Metamorphosis Ltd. (Official Odoo Country Partner)</div>
+
+          <div class="dir-card__expertise-chips">
+            <span class="dir-chip">Odoo ERP</span>
+            <span class="dir-chip">AI Integration</span>
+            <span class="dir-chip">BUET · NUS</span>
+            <span class="dir-chip">35+ Implementations</span>
+            <span class="dir-chip">Govt. IT</span>
+          </div>
+
+          <p class="dir-card__summary">
+            20+ years across IT, engineering and digital transformation. 35+ Odoo ERP implementations globally (Bangladesh, Netherlands, UAE, Saudi Arabia, New Zealand…). Govt. of Bangladesh, Bangladesh Armed Services Board, Save the Children, CIRDAP. Certified Odoo Functional Consultant; AI Fluency (Anthropic). Published on ERP-AI convergence and secure closed AI for zero-data-bleed environments.
+          </p>
+        </div>
+
+        <div class="dir-card__footer">
+          <div class="dir-card__exp">
+            <span class="dir-card__years-icon">⏱</span>
+            20+ Years
+            <div class="dir-card__exp-bar">
+              <div class="dir-card__exp-fill" style="width:0" data-width="88%"></div>
+            </div>
+          </div>
+          <button class="dir-card__view-btn" data-open-dir="sadiq" aria-label="View full profile of Sadiq M. Alam">
+            Full Profile →
+          </button>
+        </div>
+      </article>
+
+      <!-- Shaheen Bin Siraz -->
+      <article class="dir-card dir-card--standard dir-card--shaheen reveal delay-2" id="dir-shaheen">
+        <div class="dir-card__highlight" aria-hidden="true"></div>
+        <div class="dir-number" aria-label="Director 4 of 5">04 / 05</div>
+
+        <div class="dir-card__photo-wrap">
+          <img src="../images/Shaheen Bin Siraz.jpg"
+               alt="Shaheen Bin Siraz, Director, Dsectors Services Limited"
+               class="dir-card__photo"
+               loading="lazy"
+               onerror="this.closest('.dir-card__photo-wrap').innerHTML='<div class=\'dir-photo-placeholder\'>👨‍🏛️</div>';" />
+          <div class="dir-card__photo-grad" aria-hidden="true"></div>
+          <div class="dir-card__photo-side">
+            <span class="badge badge--gold" style="font-size:0.62rem;">Director</span>
+          </div>
+        </div>
+
+        <div class="dir-card__body">
+          <div class="dir-card__role-badge">
+            <span class="badge badge--gold">Director · Programme Design</span>
+          </div>
+          <h3 class="dir-card__name">Shaheen Bin Siraz</h3>
+          <div class="dir-card__title-line">USAID · Project Design · EESG Safeguards</div>
+          <div class="dir-card__institution">Former Project Design Team Lead, USAID/Bangladesh · EESG Advisor</div>
+
+          <div class="dir-card__expertise-chips">
+            <span class="dir-chip">USAID $3B Portfolio</span>
+            <span class="dir-chip">IFC Performance Stds</span>
+            <span class="dir-chip">AOR/COR</span>
+            <span class="dir-chip">WB ESS</span>
+            <span class="dir-chip">WASH Cluster</span>
+          </div>
+
+          <p class="dir-card__summary">
+            25+ years international development. Project Design Team Lead, USAID/Bangladesh (2012–2025) — facilitated ~240 projects worth ~$3B across climate, health, education, governance and humanitarian. Now advising on EESG compliance (IFC PS & World Bank ESS) via Lexington Advisory and Consilium Group Advisors. UNICEF-rostered Global WASH Cluster Coordinator. USAID Mission Honour Award (2015, twice) and Eagle Award (2014).
+          </p>
+        </div>
+
+        <div class="dir-card__footer">
+          <div class="dir-card__exp">
+            <span class="dir-card__years-icon">⏱</span>
+            25+ Years
+            <div class="dir-card__exp-bar">
+              <div class="dir-card__exp-fill" style="width:0" data-width="95%"></div>
+            </div>
+          </div>
+          <button class="dir-card__view-btn" data-open-dir="shaheen" aria-label="View full profile of Shaheen Bin Siraz">
+            Full Profile →
+          </button>
+        </div>
+      </article>
+
+      <!-- Farhana Hafiz -->
+      <article class="dir-card dir-card--standard dir-card--farhana reveal delay-3" id="dir-farhana">
+        <div class="dir-card__highlight" aria-hidden="true"></div>
+        <div class="dir-number" aria-label="Director 5 of 5">05 / 05</div>
+
+        <div class="dir-card__photo-wrap">
+          <img src="../images/Farhana Hafiz.jpg"
+               alt="Farhana Hafiz, Director, Dsectors Services Limited"
+               class="dir-card__photo"
+               loading="lazy"
+               onerror="this.closest('.dir-card__photo-wrap').innerHTML='<div class=\'dir-photo-placeholder\'>👩‍🌏</div>';" />
+          <div class="dir-card__photo-grad" aria-hidden="true"></div>
+          <div class="dir-card__photo-side">
+            <span class="badge badge--teal" style="font-size:0.62rem;">Director</span>
+          </div>
+        </div>
+
+        <div class="dir-card__body">
+          <div class="dir-card__role-badge">
+            <span class="badge badge--teal">Director · Gender &amp; Humanitarian</span>
+          </div>
+          <h3 class="dir-card__name">Farhana Hafiz</h3>
+          <div class="dir-card__title-line">Gender · Climate Resilience · Humanitarian Action</div>
+          <div class="dir-card__institution">National Consultant, UN Women Bangladesh · Former Regional Gender Advisor</div>
+
+          <div class="dir-card__expertise-chips">
+            <span class="dir-chip">UN Women</span>
+            <span class="dir-chip">Gender-DRR</span>
+            <span class="dir-chip">GBV/PSEA</span>
+            <span class="dir-chip">Oxfam Asia</span>
+            <span class="dir-chip">Humanitarian Coord.</span>
+          </div>
+
+          <p class="dir-card__summary">
+            27 years in gender-responsive DRR, climate adaptation and humanitarian coordination. National Consultant, UN Women Bangladesh (2025–present). Former Regional Gender Equality Advisor – Asia, Nutrition International. Contributed to Gender-Responsive Guidelines, SoD 2020. Represented UN Women in Joint Post-Conflict Needs Assessment in Yemen. Initiated first women-focused bKash mobile money transfer in humanitarian response in Bangladesh.
+          </p>
+        </div>
+
+        <div class="dir-card__footer">
+          <div class="dir-card__exp">
+            <span class="dir-card__years-icon">⏱</span>
+            27 Years
+            <div class="dir-card__exp-bar">
+              <div class="dir-card__exp-fill" style="width:0" data-width="98%"></div>
+            </div>
+          </div>
+          <button class="dir-card__view-btn" data-open-dir="farhana" aria-label="View full profile of Farhana Hafiz">
+            Full Profile →
+          </button>
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     COLLECTIVE ACCOMPLISHMENTS
+════════════════════════════════════════ -->
+<section class="section" id="accomplishments" style="background:var(--ink-2);" aria-label="Collective accomplishments">
+  <div class="container container--narrow">
+    <div class="section-label reveal" style="justify-content:center;">Collective Institutional Experience</div>
+    <h2 class="t-h2 text-center reveal delay-1">What This Board<br><em class="gradient-text">Carries to Every Assignment</em></h2>
+    <p class="text-center text-muted reveal delay-2" style="margin:1.25rem auto 3rem;max-width:620px;font-size:1.1rem;line-height:1.85;">
+      These are not listed credentials — they are the lived, practitioner-level experiences the directors bring directly to Dsectors' clients.
+    </p>
+
+    <div class="accomplishment-pills">
+      <div class="acc-pill reveal delay-1">~240 projects and activities worth close to <strong style="color:var(--text-bright);margin:0 0.25rem;">USD 3 billion</strong> designed and facilitated at USAID/Bangladesh across climate, health, education, democracy and governance</div>
+      <div class="acc-pill reveal delay-2">Gender and GBV technical leadership delivered across <strong style="color:var(--text-bright);margin:0 0.25rem;">50+ World Bank sovereign operations</strong> in Bangladesh and Bhutan</div>
+      <div class="acc-pill reveal delay-3">National campaigns — including MoHFW's national HIV prevention campaign — reaching an estimated <strong style="color:var(--text-bright);margin:0 0.25rem;">60 million people</strong> nationwide</div>
+      <div class="acc-pill reveal delay-4">Contributed to <strong style="color:var(--text-bright);margin:0 0.25rem;">Gender-Responsive Guidelines for the Standing Orders on Disaster (SoD) 2020</strong> — Bangladesh's key national DRR framework</div>
+      <div class="acc-pill reveal delay-5"><strong style="color:var(--text-bright);margin:0 0.25rem;">35+ Odoo ERP implementations</strong> globally including Save the Children, CIRDAP, Government of Bangladesh and Bangladesh Armed Services Board</div>
+      <div class="acc-pill reveal delay-6">Representation at 20th, 22nd, 23rd International AIDS Conferences; ICAAP11, ICAAP12; NWSA Annual Conference; WEEF-GEDC Conference; and XI IASSCS Conference</div>
+      <div class="acc-pill reveal">Initiated the <strong style="color:var(--text-bright);margin:0 0.25rem;">first women-focused bKash (mobile money) programme</strong> in humanitarian response in Bangladesh — under NARRI Consortium (Oxfam, ECHO, DFID)</div>
+      <div class="acc-pill reveal">USAID Mission Honour Award (2015, twice) · Eagle Award (2014) · Fulbright FLTA Grant · Deutsche Welle Best of the Blogs (BOBs) Nomination · Phi Beta Delta Outstanding Paper Award</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     CTA
+════════════════════════════════════════ -->
+<section class="cta-section" aria-label="Call to action">
+  <div class="container">
+    <div class="cta-banner reveal--scale reveal">
+      <h2 class="cta-banner__title">Work with World-Class Practitioners</h2>
+      <p class="cta-banner__desc">
+        Request our company profile, directors' CVs, and prequalification documents. We are ready for World Bank, ADB, USAID, FCDO, UN and bilateral procurement.
+      </p>
+      <div class="cta-banner__actions">
+        <a href="contact.html"   class="btn btn--primary" id="dir-page-contact-btn">Get in Touch</a>
+        <a href="services.html"  class="btn btn--glass"   id="dir-page-services-btn">Our Services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     FOOTER
+════════════════════════════════════════ -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <a href="../index.html" class="nav__logo" style="display:inline-flex;margin-bottom:1.5rem;">
+          <img src="../images/dsectors-logo.png" alt="Dsectors Services Limited" class="nav__logo-img" style="height:56px;" />
+        </a>
+        <p class="footer__brand-desc">Research · Evaluation · Strategic Communications · Gender &amp; Inclusion · Climate &amp; DRR · Digital Transformation · Capacity Building</p>
+        <div class="footer__social">
+          <a href="https://facebook.com/dsectors.org" class="footer__social-link" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+          <a href="mailto:info@dsectors.org" class="footer__social-link" aria-label="Email">✉</a>
+          <a href="tel:+8801752578888" class="footer__social-link" aria-label="Phone">📞</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Navigation</div>
+        <nav class="footer__links">
+          <a href="../index.html"   class="footer__link">Home</a>
+          <a href="who-we-are.html" class="footer__link">Who We Are</a>
+          <a href="services.html"   class="footer__link">Services</a>
+          <a href="clients.html"    class="footer__link">Partners</a>
+          <a href="contact.html"    class="footer__link">Contact</a>
+        </nav>
+      </div>
+      <div>
+        <div class="footer__col-title">Services</div>
+        <div class="footer__links">
+          <span class="footer__link">Research &amp; Studies</span>
+          <span class="footer__link">MEL &amp; Third-Party Evaluation</span>
+          <span class="footer__link">Gender, GESI &amp; Safeguards</span>
+          <span class="footer__link">Climate, DRR &amp; ESS</span>
+          <span class="footer__link">Strategic Communications</span>
+          <span class="footer__link">Digital Transformation &amp; AI</span>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Contact</div>
+        <div class="footer__links">
+          <span class="footer__link">179/3 (2nd Floor), Fakirerpool</span>
+          <span class="footer__link">Motijheel, Dhaka-1000, Bangladesh</span>
+          <a href="tel:+8801752578888" class="footer__link">+880 1752 578888</a>
+          <a href="mailto:info@dsectors.org" class="footer__link">info@dsectors.org</a>
+          <a href="mailto:faizul.karim@dsectors.org" class="footer__link">faizul.karim@dsectors.org</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__reg">
+        <span>© 2025 Dsectors Services Limited</span>
+        <span class="footer__reg-sep">·</span>
+        <span>Reg. No. C-187290/2023, RJSC Bangladesh</span>
+      </div>
+      <span>Companies Act (Act XVIII), 1994</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════════
+     DIRECTOR MODAL
+════════════════════════════════════════ -->
+<div class="modal-backdrop" id="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-dir-name">
+
+  <div class="modal">
+    <div class="modal__top-bar" aria-hidden="true"></div>
+
+    <div class="modal__layout">
+
+      <!-- Sidebar -->
+      <div class="modal__sidebar">
+        <div class="modal__photo-wrap">
+          <img class="modal__photo" src="" alt="" />
+          <div class="modal__photo-grad" aria-hidden="true"></div>
+        </div>
+        <div class="modal__sidebar-info">
+          <div class="modal__sidebar-name" id="modal-dir-name" data-m="name">Director Name</div>
+          <div class="modal__sidebar-role" data-m="role">Role</div>
+          <div style="font-size:0.78rem;color:var(--text-muted);margin-bottom:1rem;font-style:italic;" data-m="institution">Institution</div>
+          <div style="font-size:0.75rem;color:var(--text-dim);font-family:var(--f-mono);margin-bottom:1rem;" data-m="exp"></div>
+          <div class="modal__sidebar-chips" data-m="chips"></div>
+        </div>
+      </div>
+
+      <!-- Main content -->
+      <div class="modal__content">
+        <button class="modal__close" aria-label="Close director profile">✕</button>
+
+        <div class="modal__sec-title">Professional Bio</div>
+        <p class="modal__bio" data-m="bio" style="white-space:pre-line;"></p>
+
+        <div class="modal__sec-title">Selected Engagements &amp; Credentials</div>
+        <div class="modal__achievements" data-m="engagements"></div>
+
+        <div class="modal__sec-title">Career History</div>
+        <div class="modal__timeline" data-m="timeline"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="../js/directors.js"></script>
+<script src="../js/main.js"></script>
+<script>
+  // Animate experience bars when visible
+  document.addEventListener('DOMContentLoaded', () => {
+    const bars = document.querySelectorAll('.dir-card__exp-fill');
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const w = e.target.dataset.width;
+          setTimeout(() => { e.target.style.width = w; }, 300);
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    bars.forEach(b => io.observe(b));
+
+    // Card mouse glow
+    document.querySelectorAll('.dir-card').forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const r = card.getBoundingClientRect();
+        const x = ((e.clientX - r.left) / r.width  * 100).toFixed(1);
+        const y = ((e.clientY - r.top)  / r.height * 100).toFixed(1);
+        card.style.setProperty('--mx', x + '%');
+        card.style.setProperty('--my', y + '%');
+      });
+    });
+  });
+</script>
+</body>
+</html>

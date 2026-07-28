@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services | Dsectors Services Limited</title>
+  <meta name="description" content="Ten integrated service lines from Dsectors: research, MEL, gender & GESI, climate & DRR, strategic communications, programme design, capacity building, digital transformation, renewables, and publications." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%231a6fd8'/><text y='24' x='4' font-size='22' font-weight='900' fill='white' font-family='Inter'>D</text></svg>" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    /* ── Service Detail Cards ── */
+    .svc-detail {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 5rem;
+      align-items: start;
+      padding: 5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .svc-detail:last-child { border-bottom: none; }
+    .svc-detail:nth-child(even) { direction: rtl; }
+    .svc-detail:nth-child(even) > * { direction: ltr; }
+
+    .svc-detail__num {
+      font-family: var(--f-mono);
+      font-size: 4rem;
+      font-weight: 900;
+      line-height: 1;
+      color: rgba(33,117,109,0.1);
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.05em;
+    }
+
+    .svc-detail__icon-wrap {
+      width: 64px; height: 64px;
+      border-radius: var(--r-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .svc-detail__title { font-family: var(--f-display); font-size: clamp(1.5rem,2.5vw,2rem); font-weight: 700; color: var(--text-bright); margin-bottom: 1rem; letter-spacing: -0.02em; }
+    .svc-detail__desc { font-size: 1.1rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 1.5rem; }
+
+    .svc-detail__list { display: flex; flex-direction: column; gap: 0.5rem; }
+    .svc-detail__item {
+      display: flex;
+      gap: 0.8rem;
+      align-items: baseline;
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .svc-detail__item:last-child { border-bottom: none; }
+    .svc-detail__item::before { content: '▸'; color: var(--teal); font-size: 0.65rem; flex-shrink: 0; margin-top: 0.15rem; }
+
+    .svc-detail__visual {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-md);
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .svc-detail__visual::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+    }
+
+    .svc-v--blue::before   { background: var(--g-primary); }
+    .svc-v--teal::before   { background: linear-gradient(90deg,var(--teal),var(--olive-lt)); }
+    .svc-v--gold::before   { background: var(--g-gold); }
+    .svc-v--violet::before { background: linear-gradient(90deg,var(--olive),var(--olive-lt)); }
+
+    .svc-visual-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      padding: 0.9rem 1rem;
+      background: rgba(26,26,26,0.025);
+      border: 1px solid var(--border);
+      border-radius: var(--r-md);
+      transition: all var(--dur-fast);
+    }
+
+    .svc-visual-item:hover { background: rgba(33,117,109,0.06); border-color: rgba(33,117,109,0.2); }
+    .svc-visual-item__icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .svc-visual-item__title { font-size: 0.95rem; font-weight: 700; color: var(--text-bright); margin-bottom: 0.25rem; }
+    .svc-visual-item__desc  { font-size: 1.05rem; color: var(--text-muted); line-height: 1.55; }
+
+    @media (max-width: 1024px) {
+      .svc-detail { grid-template-columns: 1fr; gap: 3rem; direction: ltr !important; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="info-bar" role="complementary" aria-label="Office information">
+  <div class="info-bar__group">
+    <span class="info-bar__item"><span class="info-bar__icon" aria-hidden="true">📍</span>179/3 (2nd Floor), Fakirerpool, Motijheel, Dhaka-1000, Bangladesh</span>
+    <a href="tel:+8801752578888" class="info-bar__item"><span class="info-bar__icon" aria-hidden="true">📞</span>+880 1752 578888</a>
+  </div>
+  <div class="info-bar__group">
+    <span class="info-bar__item"><span class="info-bar__icon" aria-hidden="true">🕐</span>Sunday – Thursday, 9:00 AM – 5:00 PM</span>
+  </div>
+</div>
+
+<nav class="nav scrolled" id="main-nav" role="navigation" aria-label="Main navigation">
+  <div class="nav__inner">
+    <a href="../index.html" class="nav__logo">
+      <img src="../images/dsectors-logo.png" alt="Dsectors Services Limited" class="nav__logo-img" />
+    </a>
+    <div class="nav__links">
+      <a href="../index.html" class="nav__link" data-page="index.html">Home</a>
+
+      <div class="nav__item">
+        <button class="nav__link nav__link--parent" aria-haspopup="true" aria-expanded="false">About Us
+          <svg class="caret" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2 3.5 5 6.5 8 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="nav__dropdown" role="menu">
+          <a href="who-we-are.html">Who We Are</a>
+          <a href="who-we-are.html#board">Board of Directors</a>
+          <a href="../index.html#approach">Our Approach &amp; Values</a>
+        </div>
+      </div>
+
+      <div class="nav__item">
+        <button class="nav__link nav__link--parent" aria-haspopup="true" aria-expanded="false">Services
+          <svg class="caret" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2 3.5 5 6.5 8 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="nav__dropdown" role="menu">
+          <a href="services.html#svc-research">Research &amp; Studies</a>
+          <a href="services.html#svc-mel">Monitoring, Evaluation &amp; Learning</a>
+          <a href="services.html#svc-gender">GESI &amp; Safeguards</a>
+          <a href="services.html#svc-climate">Climate &amp; DRR</a>
+          <a href="services.html#svc-comms">Strategic Communications</a>
+          <a href="services.html#svc-digital">Digital Transformation &amp; AI</a>
+        </div>
+      </div>
+
+      <div class="nav__item">
+        <button class="nav__link nav__link--parent" aria-haspopup="true" aria-expanded="false">Thematic Expertise
+          <svg class="caret" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2 3.5 5 6.5 8 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="nav__dropdown" role="menu">
+          <a href="thematic.html#health">Health &amp; Key Populations</a>
+          <a href="thematic.html#gender">Gender &amp; GBV</a>
+          <a href="thematic.html#governance">Governance &amp; Human Rights</a>
+          <a href="thematic.html#wash">WASH &amp; Food Security</a>
+          <a href="thematic.html#inclusion">Social Inclusion</a>
+        </div>
+      </div>
+
+      <a href="clients.html" class="nav__link" data-page="clients.html">Institutional Experience</a>
+      <a href="contact.html" class="nav__link nav__cta-btn" data-page="contact.html">Contact &amp; Procurement</a>
+    </div>
+    <button class="nav__hamburger" id="nav-ham" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav__mobile" id="nav-mobile">
+    <a href="../index.html" class="nav__link">Home</a>
+    <div class="nav__mobile-group">
+      <div class="nav__mobile-group-title">About Us</div>
+      <a href="who-we-are.html">Who We Are</a>
+      <a href="who-we-are.html#board">Board of Directors</a>
+      <a href="../index.html#approach">Our Approach &amp; Values</a>
+    </div>
+    <div class="nav__mobile-group">
+      <div class="nav__mobile-group-title">Services</div>
+      <a href="services.html#svc-research">Research &amp; Studies</a>
+      <a href="services.html#svc-mel">Monitoring, Evaluation &amp; Learning</a>
+      <a href="services.html#svc-gender">GESI &amp; Safeguards</a>
+      <a href="services.html#svc-climate">Climate &amp; DRR</a>
+      <a href="services.html#svc-comms">Strategic Communications</a>
+      <a href="services.html#svc-digital">Digital Transformation &amp; AI</a>
+    </div>
+    <div class="nav__mobile-group">
+      <div class="nav__mobile-group-title">Thematic Expertise</div>
+      <a href="thematic.html#health">Health &amp; Key Populations</a>
+      <a href="thematic.html#gender">Gender &amp; GBV</a>
+      <a href="thematic.html#governance">Governance &amp; Human Rights</a>
+      <a href="thematic.html#wash">WASH &amp; Food Security</a>
+      <a href="thematic.html#inclusion">Social Inclusion</a>
+    </div>
+    <a href="clients.html" class="nav__link">Institutional Experience</a>
+    <a href="contact.html" class="nav__link">Contact &amp; Procurement</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section style="padding:170px 0 80px;background:var(--g-hero);position:relative;overflow:hidden;" aria-label="Services page hero">
+  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(33,117,109,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(33,117,109,0.04) 1px,transparent 1px);background-size:80px 80px;" aria-hidden="true"></div>
+  <div class="hero__orb hero__orb--1" style="opacity:0.1;" aria-hidden="true"></div>
+  <div class="hero__orb hero__orb--3" style="opacity:0.08;" aria-hidden="true"></div>
+  <div class="container" style="text-align:center;position:relative;z-index:1;">
+    <div class="section-label" style="justify-content:center;">Service Portfolio</div>
+    <h1 class="t-display" style="margin:1rem auto;max-width:800px;">
+      Ten Lines.<br><em class="gradient-text">One Contract.</em>
+    </h1>
+    <p style="font-size:1.05rem;color:var(--text-muted);max-width:680px;margin:0 auto 2.5rem;line-height:1.9;">
+      Dsectors provides ten integrated service lines covering the full project cycle — from formative research and programme design to BCC/IEC campaigns, MEL, digital transformation and capacity building. All deliverable under one contract, with consistent methodological standards.
+    </p>
+    <div style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;">
+      <span class="badge badge--blue">Research &amp; MEL</span>
+      <span class="badge badge--teal">Gender &amp; Climate</span>
+      <span class="badge badge--gold">Communications</span>
+      <span class="badge badge--violet">Digital &amp; AI</span>
+    </div>
+  </div>
+</section>
+
+<!-- At One Glance -->
+<section class="section--sm" aria-label="Services at a glance">
+  <div class="container">
+    <div class="section-label" style="justify-content:center;">At One Glance</div>
+    <h2 class="t-h2 text-center" style="margin-bottom:2.5rem;">Ten Integrated <em class="gradient-text">Service Lines</em></h2>
+    <div class="hub-grid">
+      <a href="#svc-research" class="hub-card">
+        <div class="hub-card__icon hero__metric-icon--blue">🔬</div>
+        <div class="hub-card__title">Research &amp; Studies</div>
+        <p class="hub-card__desc">Formative, operational, behavioural, ethnographic and netnographic research; baseline, midline and endline studies; Rapid Gender Analysis; feasibility studies; IRB support.</p>
+        <span class="hub-card__link">Find out more <span class="arrow">→</span></span>
+      </a>
+      <a href="#svc-mel" class="hub-card">
+        <div class="hub-card__icon hero__metric-icon--teal">📊</div>
+        <div class="hub-card__title">Monitoring, Evaluation &amp; Learning</div>
+        <p class="hub-card__desc">Third-party monitoring; mid-term reviews; external and final evaluations; impact assessments; data quality assessments; PMPs; results-based management.</p>
+        <span class="hub-card__link">Find out more <span class="arrow">→</span></span>
+      </a>
+      <a href="#svc-gender" class="hub-card">
+        <div class="hub-card__icon hero__metric-icon--gold">♀</div>
+        <div class="hub-card__title">Gender Equality &amp; Social Inclusion</div>
+        <p class="hub-card__desc">Country gender assessments; Gender Action Plans; GBV/SEA/SH risk assessment; PSEA frameworks; gender-responsive budgeting; disability and SOGIESC inclusion.</p>
+        <span class="hub-card__link">Find out more <span class="arrow">→</span></span>
+      </a>
+      <a href="#svc-climate" class="hub-card">
+        <div class="hub-card__icon hero__metric-icon--violet">🌱</div>
+        <div class="hub-card__title">Climate, DRR &amp; Environmental Safeguards</div>
+        <p class="hub-card__desc">Gender-responsive climate adaptation; humanitarian preparedness; IFC Performance Standards and World Bank ESS compliance; EESG advisory and corrective action plans.</p>
+        <span class="hub-card__link">Find out more <span class="arrow">→</span></span>
+      </a>
+      <a href="#svc-comms" class="hub-card">
+        <div class="hub-card__icon hero__metric-icon--blue">📢</div>
+        <div class="hub-card__title">Strategic Communications &amp; BCC/SBCC</div>
+        <p class="hub-card__desc">Communication strategy; BCC/SBCC and IEC material development; national awareness campaigns (TVC, digital, community); documentary production; media engagement; counter-misinformation.</p>
+        <span class="hub-card__link">Find out more <span class="arrow">→</span></span>
+      </a>
+      <a href="#svc-design" class="hub-card">
+        <div class="hub-card__icon hero__metric-icon--teal">🏗️</div>
+        <div class="hub-card__title">Programme &amp; Project Design</div>
+        <p class="hub-card__desc">Donor-funded programme design; Project Appraisal Documents; concept notes; theories of change; procurement and results frameworks; donor compliance review.</p>
+        <span class="hub-card__link">Find out more <span class="arrow">→</span></span>
+      </a>
+      <a href="#svc-capacity" class="hub-card">
+        <div class="hub-card__icon hero__metric-icon--gold">🎓</div>
+        <div class="hub-card__title">Capacity Building &amp; Training</div>
+        <p class="hub-card__desc">Training needs assessment; curriculum and manual development; ToT and facilitation; institutional strengthening of government agencies, NGOs and CBOs; co-creation events.</p>
+        <span class="hub-card__link">Find out more <span class="arrow">→</span></span>
+      </a>
+      <a href="#svc-digital" class="hub-card">
+        <div class="hub-card__icon hero__metric-icon--violet">⚙️</div>
+        <div class="hub-card__title">Digital Transformation, ERP &amp; AI</div>
+        <p class="hub-card__desc">Enterprise architecture; Odoo ERP implementation; NGO/INGO MIS and grants-management; digital outreach platforms; AI integration for research and workflow automation; secure closed AI systems.</p>
+        <span class="hub-card__link">Find out more <span class="arrow">→</span></span>
+      </a>
+      <a href="#svc-renewables" class="hub-card">
+        <div class="hub-card__icon hero__metric-icon--blue">🌿</div>
+        <div class="hub-card__title">Renewables, Eco-Products &amp; Ecotourism</div>
+        <p class="hub-card__desc">Solar advisory from rooftop to utility-scale; sustainable and biodegradable professional goods; community-based and conservation-oriented ecotourism development.</p>
+        <span class="hub-card__link">Find out more <span class="arrow">→</span></span>
+      </a>
+      <a href="#svc-events" class="hub-card">
+        <div class="hub-card__icon hero__metric-icon--teal">🎙️</div>
+        <div class="hub-card__title">Event Management &amp; Publication</div>
+        <p class="hub-card__desc">Conference and seminar design, moderation and facilitation; audio-visual production; editorial services, report editing, layout and publication; professional Bangla–English translation.</p>
+        <span class="hub-card__link">Find out more <span class="arrow">→</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Overview Stats -->
+<div class="stats-section section--sm" aria-label="Service overview">
+  <div class="stats-grid container container--wide">
+    <div class="stat-box reveal"><div class="stat-box__num">10</div><div class="stat-box__label">Integrated<br>Service Lines</div></div>
+    <div class="stat-box reveal delay-1"><div class="stat-box__num">1</div><div class="stat-box__label">Contract for<br>All Services</div></div>
+    <div class="stat-box reveal delay-2"><div class="stat-box__num" data-counter data-target="30" data-suffix="+">30+</div><div class="stat-box__label">Research Studies<br>Completed</div></div>
+    <div class="stat-box reveal delay-3"><div class="stat-box__num" data-counter data-target="60" data-suffix="M+">60M+</div><div class="stat-box__label">People Reached<br>via Campaigns</div></div>
+    <div class="stat-box reveal delay-4"><div class="stat-box__num">2</div><div class="stat-box__label">Working<br>Languages</div></div>
+  </div>
+</div>
+
+<!-- Service Details -->
+<section class="section" style="background:var(--ink);" aria-label="Detailed service descriptions">
+  <div class="container">
+
+    <!-- 01 Research -->
+    <div class="svc-detail reveal" id="svc-research">
+      <div>
+        <div class="svc-detail__num" aria-hidden="true">01</div>
+        <div class="svc-detail__icon-wrap" style="background:rgba(33,117,109,0.15);">🔬</div>
+        <span class="badge badge--blue" style="margin-bottom:1rem;">Research &amp; Studies</span>
+        <h2 class="svc-detail__title">Research &amp; Studies</h2>
+        <p class="svc-detail__desc">Our research team combines quantitative, qualitative and digital approaches to generate findings that hold up to donor and peer scrutiny. We have conducted 30+ studies as team leaders, principal investigators, co-investigators, ethnographers and editors.</p>
+        <div class="svc-detail__list">
+          <div class="svc-detail__item">Formative, operational and behavioural research</div>
+          <div class="svc-detail__item">Ethnographic and netnographic studies (social media analysis)</div>
+          <div class="svc-detail__item">Baseline, midline and endline assessments</div>
+          <div class="svc-detail__item">Rapid Gender Analysis (RGA) and rapid assessments</div>
+          <div class="svc-detail__item">Feasibility and situational analyses</div>
+          <div class="svc-detail__item">IRB protocol development and ethical-clearance support</div>
+          <div class="svc-detail__item">Key-population size estimation and SOGIESC mapping</div>
+          <div class="svc-detail__item">Online violence against women (documented by ActionAid, UNAIDS)</div>
+        </div>
+      </div>
+      <div class="svc-detail__visual svc-v--blue reveal--right reveal delay-2">
+        <div class="svc-visual-item"><div class="svc-visual-item__icon">🧭</div><div><div class="svc-visual-item__title">Mixed-Methods Design</div><div class="svc-visual-item__desc">Quantitative surveys + FGDs + KIIs + ethnography + netnography, triangulated and validated</div></div></div>
+        <div class="svc-visual-item"><div class="svc-visual-item__icon">🔒</div><div><div class="svc-visual-item__title">Do-No-Harm &amp; Safeguards</div><div class="svc-visual-item__desc">IRB protocols, informed consent, data privacy, PSEA standards throughout</div></div></div>
+        <div class="svc-visual-item"><div class="svc-visual-item__icon">🌐</div><div><div class="svc-visual-item__title">Field Access</div><div class="svc-visual-item__desc">Working relationships with CBOs and key-population networks across Bangladesh</div></div></div>
+        <div class="svc-visual-item"><div class="svc-visual-item__icon">📄</div><div><div class="svc-visual-item__title">Donor-Standard Outputs</div><div class="svc-visual-item__desc">Reports, policy briefs and peer-reviewed articles to USAID, World Bank and UN quality standards</div></div></div>
+      </div>
+    </div>
+
+    <!-- 02 MEL -->
+    <div class="svc-detail reveal" id="svc-mel">
+      <div>
+        <div class="svc-detail__num" aria-hidden="true">02</div>
+        <div class="svc-detail__icon-wrap" style="background:rgba(42,140,130,0.12);">📊</div>
+        <span class="badge badge--teal" style="margin-bottom:1rem;">MEL</span>
+        <h2 class="svc-detail__title">Monitoring, Evaluation &amp; Learning</h2>
+        <p class="svc-detail__desc">Rigorous, independent evaluation to donor standards. Directors have served as team leaders and evaluators on multi-country programmes funded by the Global Fund, USAID, DFID/FCDO, DANIDA and UN agencies.</p>
+        <div class="svc-detail__list">
+          <div class="svc-detail__item">Third-party monitoring (TPM)</div>
+          <div class="svc-detail__item">Mid-term and final evaluations</div>
+          <div class="svc-detail__item">Data Quality Assessments (DQA)</div>
+          <div class="svc-detail__item">Performance Monitoring Plan (PMP) development</div>
+          <div class="svc-detail__item">Impact assessments and counterfactual analysis</div>
+          <div class="svc-detail__item">Results-based management and logframe review</div>
+          <div class="svc-detail__item">Learning workshops and adaptive management support</div>
+        </div>
+      </div>
+      <div class="svc-detail__visual svc-v--teal reveal--right reveal delay-2">
+        <div class="svc-visual-item"><div class="svc-visual-item__icon">🎯</div><div><div class="svc-visual-item__title">USAID / CDCS Alignment</div><div class="svc-visual-item__desc">Directors have served as AOR/COR and designed Country Development Cooperation Strategies</div></div></div>
+        <div class="svc-visual-item"><div class="svc-visual-item__icon">📈</div><div><div class="svc-visual-item__title">Real-Time Data Systems</div><div class="svc-visual-item__desc">Digital data collection, dashboard visualisation and adaptive learning cycles</div></div></div>
+        <div class="svc-visual-item"><div class="svc-visual-item__icon">🔍</div><div><div class="svc-visual-item__title">Qualitative Depth</div><div class="svc-visual-item__desc">Process tracing, contribution analysis and most-significant-change methodologies</div></div></div>
+        <div class="svc-visual-item"><div class="svc-visual-item__icon">🌍</div><div><div class="svc-visual-item__title">Multi-Country Experience</div><div class="svc-visual-item__desc">Evaluations across Bangladesh, Nepal, India, Cambodia, Yemen and wider Asia region</div></div></div>
+      </div>
+    </div>
+
+    <!-- 03 Gender -->
+    <div class="svc-detail reveal" id="svc-gender">
+      <div>
+        <div class="svc-detail__num" aria-hidden="true">03</div>
+        <div class="svc-detail__icon-wrap" style="background:rgba(223,176,44,0.12);">♀</div>
+        <span class="badge badge--gold" style="margin-bottom:1rem;">GESI</span>
+        <h2 class="svc-detail__title">Gender Equality &amp; Social Inclusion (GESI)</h2>
+        <p class="svc-detail__desc">World Bank GEN/EGM/SGE-tagging experience; gender action plan design; GBV/SEA/SH risk frameworks; PSEA policy and implementation; disability-inclusive design; SOGIESC integration.</p>
+        <div class="svc-detail__list">
+          <div class="svc-detail__item">Country Gender Assessments (CGA)</div>
+          <div class="svc-detail__item">Gender Action Plans and gender tagging (World Bank taxonomy)</div>
+          <div class="svc-detail__item">GBV / SEA / SH risk assessment and mitigation</div>
+          <div class="svc-detail__item">PSEA and safeguarding policy development and audit</div>
+          <div class="svc-detail__item">Gender-responsive budgeting and public expenditure analysis</div>
+          <div class="svc-detail__item">SOGIESC economic empowerment and workplace inclusion</div>
+          <div class="svc-detail__item">Disability-inclusive programming (DRR, WASH, humanitarian)</div>
+          <div class="svc-detail__item">Gender and power analysis (intersectional lens)</div>
+        </div>
+      </div>
+      <div class="svc-detail__visual svc-v--gold reveal--right reveal delay-2">
+        <div class="svc-visual-item"><div class="svc-visual-item__icon">🏛️</div><div><div class="svc-visual-item__title">World Bank ESS &amp; IFC PS</div><div class="svc-visual-item__desc">50+ sovereign operations supported; EESG compliance (IFC PS 1–8 and World Bank ESS 1–10)</div></div></div>
+        <div class="svc-visual-item"><div class="svc-visual-item__icon">🛡</div><div><div class="svc-visual-item__title">GBV Risk &amp; PSEA</div><div class="svc-visual-item__desc">GBV-sensitive GRM design; survivor-centred approach; PSEA audits and corrective action plans</div></div></div>
+        <div class="svc-visual-item"><div class="svc-visual-item__icon">🌈</div><div><div class="svc-visual-item__title">SOGIESC &amp; Disability</div><div class="svc-visual-item__desc">Community-led SOGIESC mapping; SRHR digital outreach; inclusive DRR shelter design</div></div></div>
+        <div class="svc-visual-item"><div class="svc-visual-item__icon">🎓</div><div><div class="svc-visual-item__title">Academic Rigour</div><div class="svc-visual-item__desc">Discourse analysis, intersectional feminism and peer-reviewed gender research</div></div></div>
+      </div>
+    </div>
+
+    <!-- 04 Climate -->
+    <div class="svc-detail reveal" id="svc-climate">
+      <div>
+        <div class="svc-detail__num" aria-hidden="true">04</div>
+        <div class="svc-detail__icon-wrap" style="background:rgba(42,140,130,0.12);">🌱</div>
+        <span class="badge badge--teal" style="margin-bottom:1rem;">Climate &amp; DRR</span>
+        <h2 class="svc-detail__title">Climate, DRR &amp; Environmental Safeguards</h2>
+        <p class="svc-detail__desc">Gender-responsive disaster risk reduction, climate adaptation programming, humanitarian preparedness and EESG safeguards advisory — meeting IFC Performance Standards and World Bank Environmental and Social Standards.</p>
+        <div class="svc-detail__list">
+          <div class="svc-detail__item">Gender-responsive DRR framework and capacity development</div>
+          <div class="svc-detail__item">Standing Orders on Disaster (SoD) advisory and gender guidelines</div>
+          <div class="svc-detail__item">EESG compliance: IFC Performance Standards 1–8</div>
+          <div class="svc-detail__item">World Bank Environmental and Social Standards (ESS) compliance</div>
+          <div class="svc-detail__item">Environmental and Social Impact Assessment (ESIA) support</div>
+          <div class="svc-detail__item">Community-based DRR and climate-resilient WASH</div>
+          <div class="svc-detail__item">DIPECHO and ECHO-funded resilience programming</div>
+          <div class="svc-detail__item">Climate finance readiness and gender-responsive NAP support</div>
+        </div>
+      </div>
+      <div class="svc-detail__visual svc-v--teal reveal--right reveal delay-2">
+        <div class="svc-visual-item"><div class="svc-visual-item__icon">📋</div><div><div class="svc-visual-item__title">SoD 2020 Gender Guidelines</div><div class="svc-visual-item__desc">Direct contributors to Bangladesh's Gender-Responsive Guidelines for the Standing Orders on Disaster</div></div></div>
+        <div class="svc-visual-item"><div class="svc-visual-item__icon">🌊</div><div><div class="svc-visual-item__title">Cyclone, Flood &amp; Climate Response</div><div class="svc-visual-item__desc">SIDR, AILA, Amphan and regular flood response; 6-country INCRISD-South Asia programme</div></div></div>
+        <div class="svc-visual-item"><div class="svc-visual-item__icon">⚖</div><div><div class="svc-visual-item__title">EESG Advisory</div><div class="svc-visual-item__desc">IFC PS and World Bank ESS gap assessment; corrective action planning; GBV/PSEA integration into E&amp;S frameworks</div></div></div>
+      </div>
+    </div>
+
+    <!-- 05 Comms -->
+    <div class="svc-detail reveal" id="svc-comms">
+      <div>
+        <div class="svc-detail__num" aria-hidden="true">05</div>
+        <div class="svc-detail__icon-wrap" style="background:rgba(101,116,91,0.12);">📢</div>
+        <span class="badge badge--violet" style="margin-bottom:1rem;">Strategic Comms</span>
+        <h2 class="svc-detail__title">Strategic Communications, BCC &amp; SBCC</h2>
+        <p class="svc-detail__desc">From research to mass reach: Dsectors designs, produces and delivers BCC/SBCC and IEC campaigns that communicate health, gender, environment and governance messages to audiences of millions. National campaigns have reached an estimated 60 million people.</p>
+        <div class="svc-detail__list">
+          <div class="svc-detail__item">Communication strategy and theory of change</div>
+          <div class="svc-detail__item">BCC / SBCC campaign design and implementation</div>
+          <div class="svc-detail__item">IEC material development (print, digital, AV, radio, theatre)</div>
+          <div class="svc-detail__item">Television and radio campaign scripting and production</div>
+          <div class="svc-detail__item">National multi-media campaigns (GoB / MoHFW)</div>
+          <div class="svc-detail__item">Social media campaigns (World Bank — 2M+ users)</div>
+          <div class="svc-detail__item">Knowledge management systems and platforms</div>
+          <div class="svc-detail__item">Counter-misinformation and digital literacy campaigns</div>
+          <div class="svc-detail__item">Bangla–English writing, editing and translation</div>
+        </div>
+      </div>
+      <div class="svc-detail__visual svc-v--violet reveal--right reveal delay-2">
+        <div class="svc-visual-item"><div class="svc-visual-item__icon">📺</div><div><div class="svc-visual-item__title">MoHFW National Campaigns</div><div class="svc-visual-item__desc">'Banchte Hole Jante Hobe' and 'Banchte Hole Mante Hobe' — reaching 60 million Bangladeshis</div></div></div>
+        <div class="svc-visual-item"><div class="svc-visual-item__icon">🌐</div><div><div class="svc-visual-item__title">World Bank Social Media</div><div class="svc-visual-item__desc">Public financial management reform and green growth materials reaching 2 million users</div></div></div>
+        <div class="svc-visual-item"><div class="svc-visual-item__icon">📰</div><div><div class="svc-visual-item__title">blog.bdnews24.com</div><div class="svc-visual-item__desc">Bangladesh's first citizen-journalism platform — 10,000 registered users, 50+ articles authored</div></div></div>
+        <div class="svc-visual-item"><div class="svc-visual-item__icon">🏆</div><div><div class="svc-visual-item__title">Deutsche Welle BOBs</div><div class="svc-visual-item__desc">Nominated for Best of the Blogs (BOBs) Award 2010 — international digital innovation recognition</div></div></div>
+      </div>
+    </div>
+
+    <!-- 06 Programme Design -->
+    <div class="svc-detail reveal" id="svc-design">
+      <div>
+        <div class="svc-detail__num" aria-hidden="true">06</div>
+        <div class="svc-detail__icon-wrap" style="background:rgba(33,117,109,0.15);">🏗️</div>
+        <span class="badge badge--blue" style="margin-bottom:1rem;">Programme Design</span>
+        <h2 class="svc-detail__title">Programme &amp; Project Design</h2>
+        <p class="svc-detail__desc">With a former USAID Project Design Team Lead who has facilitated ~240 projects worth close to USD 3 billion, Dsectors can bring unmatched insider knowledge of donor programme design cycles — from concept note to signed agreement.</p>
+        <div class="svc-detail__list">
+          <div class="svc-detail__item">Project Appraisal Documents (PADs) — World Bank standard</div>
+          <div class="svc-detail__item">Concept notes and full proposals (USAID, FCDO, ECHO, UN)</div>
+          <div class="svc-detail__item">Theory of Change (ToC) development and validation</div>
+          <div class="svc-detail__item">Results framework and indicator design</div>
+          <div class="svc-detail__item">Procurement planning and contractor prequalification</div>
+          <div class="svc-detail__item">Mission and Country Development Cooperation Strategy (CDCS) alignment</div>
+          <div class="svc-detail__item">Donor compliance review and quality assurance</div>
+        </div>
+      </div>
+      <div class="svc-detail__visual svc-v--blue reveal--right reveal delay-2">
+        <div class="svc-visual-item"><div class="svc-visual-item__icon">🇺🇸</div><div><div class="svc-visual-item__title">USAID Insider Knowledge</div><div class="svc-visual-item__desc">Former USAID/Bangladesh Project Design Team Lead — AOR/COR, PADs, Mission Orders</div></div></div>
+        <div class="svc-visual-item"><div class="svc-visual-item__icon">💰</div><div><div class="svc-visual-item__title">~$3B Portfolio Experience</div><div class="svc-visual-item__desc">240 projects across climate, health, education, democracy, food security, humanitarian</div></div></div>
+        <div class="svc-visual-item"><div class="svc-visual-item__icon">🌍</div><div><div class="svc-visual-item__title">Multi-Donor Fluency</div><div class="svc-visual-item__desc">USAID · World Bank · ADB · FCDO · DANIDA · ECHO · SIDA · OFDA compliance requirements</div></div></div>
+      </div>
+    </div>
+
+    <!-- 07 Capacity -->
+    <div class="svc-detail reveal" id="svc-capacity">
+      <div>
+        <div class="svc-detail__num" aria-hidden="true">07</div>
+        <div class="svc-detail__icon-wrap" style="background:rgba(223,176,44,0.12);">🎓</div>
+        <span class="badge badge--gold" style="margin-bottom:1rem;">Capacity Building</span>
+        <h2 class="svc-detail__title">Capacity Building &amp; Training</h2>
+        <p class="svc-detail__desc">Bespoke training design and delivery from curriculum to facilitation — for government agencies, NGOs and civil-society organisations. Our directors have trained staff across South and Southeast Asia.</p>
+        <div class="svc-detail__list">
+          <div class="svc-detail__item">Training Needs Assessment (TNA)</div>
+          <div class="svc-detail__item">Curriculum and facilitator manual development</div>
+          <div class="svc-detail__item">Training of Trainers (ToT) and cascade training</div>
+          <div class="svc-detail__item">Workshop design and facilitation (in-person and virtual)</div>
+          <div class="svc-detail__item">Institutional strengthening: government, NGO, CBO</div>
+          <div class="svc-detail__item">Co-creation, human-centred design events</div>
+          <div class="svc-detail__item">Gender and GBV mainstreaming training</div>
+          <div class="svc-detail__item">ERP user training (Odoo ecosystem)</div>
+        </div>
+      </div>
+      <div class="svc-detail__visual svc-v--gold reveal--right reveal delay-2">
+        <div class="svc-visual-item"><div class="svc-visual-item__icon">🏢</div><div><div class="svc-visual-item__title">Government &amp; UN Institutional Training</div><div class="svc-visual-item__desc">Training for MoDMR, MoWCA, BRAC, Plan International, UN Women partners and Nutrition International Asia staff</div></div></div>
+        <div class="svc-visual-item"><div class="svc-visual-item__icon">🌏</div><div><div class="svc-visual-item__title">Regional Reach</div><div class="svc-visual-item__desc">Training delivered across Bangladesh, Nepal, India, Cambodia, Vietnam, Philippines and the wider Asia region</div></div></div>
+        <div class="svc-visual-item"><div class="svc-visual-item__icon">💻</div><div><div class="svc-visual-item__title">Hybrid &amp; Virtual Delivery</div><div class="svc-visual-item__desc">UNAIDS virtual-intervention design for hard-to-reach populations; digital platforms for remote training</div></div></div>
+      </div>
+    </div>
+
+    <!-- 08 Digital -->
+    <div class="svc-detail reveal" id="svc-digital">
+      <div>
+        <div class="svc-detail__num" aria-hidden="true">08</div>
+        <div class="svc-detail__icon-wrap" style="background:rgba(101,116,91,0.12);">⚙️</div>
+        <span class="badge badge--violet" style="margin-bottom:1rem;">Digital &amp; AI</span>
+        <h2 class="svc-detail__title">Digital Transformation, ERP &amp; AI</h2>
+        <p class="svc-detail__desc">Dsectors is unique among development consultancies in offering certified enterprise architecture, Odoo ERP implementation and AI integration expertise — directly relevant to donor data-management, grants tracking and knowledge-management requirements.</p>
+        <div class="svc-detail__list">
+          <div class="svc-detail__item">Enterprise architecture assessment and roadmap</div>
+          <div class="svc-detail__item">Odoo ERP implementation (full lifecycle, multi-country)</div>
+          <div class="svc-detail__item">NGO/INGO grants management and MIS systems</div>
+          <div class="svc-detail__item">AI integration for research, MEL and reporting workflows</div>
+          <div class="svc-detail__item">Secure closed AI systems (zero-data-bleed environments)</div>
+          <div class="svc-detail__item">Digital outreach platforms for key populations</div>
+          <div class="svc-detail__item">Data dashboards and visualisation</div>
+          <div class="svc-detail__item">Netnography and social media analytics</div>
+        </div>
+      </div>
+      <div class="svc-detail__visual svc-v--violet reveal--right reveal delay-2">
+        <div class="svc-visual-item"><div class="svc-visual-item__icon">🏭</div><div><div class="svc-visual-item__title">35+ Global ERP Implementations</div><div class="svc-visual-item__desc">Save the Children · CIRDAP · GoB · Bangladesh Armed Services Board · 10+ countries</div></div></div>
+        <div class="svc-visual-item"><div class="svc-visual-item__icon">🤖</div><div><div class="svc-visual-item__title">AI-Certified Leadership</div><div class="svc-visual-item__desc">Anthropic AI Fluency · Google AI Fundamentals · Published ERP-AI convergence thought leader</div></div></div>
+        <div class="svc-visual-item"><div class="svc-visual-item__icon">🔐</div><div><div class="svc-visual-item__title">Secure AI for Sensitive Data</div><div class="svc-visual-item__desc">Closed AI architectures designed for donor-confidential, safeguarding-sensitive and government data environments</div></div></div>
+        <div class="svc-visual-item"><div class="svc-visual-item__icon">🌐</div><div><div class="svc-visual-item__title">Digital Health Platforms</div><div class="svc-visual-item__desc">Virtual intervention design for HIV key populations; digital health applications; UNAIDS-backed e-services</div></div></div>
+      </div>
+    </div>
+
+    <!-- 09 Renewables -->
+    <div class="svc-detail reveal" id="svc-renewables">
+      <div>
+        <div class="svc-detail__num" aria-hidden="true">09</div>
+        <div class="svc-detail__icon-wrap" style="background:rgba(33,117,109,0.15);">🌿</div>
+        <span class="badge badge--blue" style="margin-bottom:1rem;">Renewables &amp; Ecotourism</span>
+        <h2 class="svc-detail__title">Renewables, Eco-Products &amp; Ecotourism</h2>
+        <p class="svc-detail__desc">Beyond core research and advisory work, Dsectors supports clients moving toward sustainable energy, sustainable goods and conservation-oriented tourism — bringing the same rigour and field access used in our development portfolio.</p>
+        <div class="svc-detail__list">
+          <div class="svc-detail__item">Solar feasibility and technical advisory, rooftop to utility-scale</div>
+          <div class="svc-detail__item">Renewable energy policy and market assessments</div>
+          <div class="svc-detail__item">Sustainable and biodegradable professional goods sourcing and development</div>
+          <div class="svc-detail__item">Community-based and conservation-oriented ecotourism planning</div>
+          <div class="svc-detail__item">Ecotourism impact and sustainability assessments</div>
+          <div class="svc-detail__item">Green procurement and sustainability advisory</div>
+        </div>
+      </div>
+      <div class="svc-detail__visual svc-v--blue reveal--right reveal delay-2">
+        <div class="svc-visual-item"><div class="svc-visual-item__icon">☀️</div><div><div class="svc-visual-item__title">Rooftop to Utility-Scale</div><div class="svc-visual-item__desc">Technical and financial feasibility advisory across the full solar deployment spectrum</div></div></div>
+        <div class="svc-visual-item"><div class="svc-visual-item__icon">♻️</div><div><div class="svc-visual-item__title">Sustainable Sourcing</div><div class="svc-visual-item__desc">Biodegradable and eco-conscious professional goods for donor and NGO procurement</div></div></div>
+        <div class="svc-visual-item"><div class="svc-visual-item__icon">🌳</div><div><div class="svc-visual-item__title">Community-Led Ecotourism</div><div class="svc-visual-item__desc">Conservation-oriented tourism models designed with and for host communities</div></div></div>
+      </div>
+    </div>
+
+    <!-- 10 Events & Publication -->
+    <div class="svc-detail reveal" id="svc-events">
+      <div>
+        <div class="svc-detail__num" aria-hidden="true">10</div>
+        <div class="svc-detail__icon-wrap" style="background:rgba(42,140,130,0.12);">🎙️</div>
+        <span class="badge badge--teal" style="margin-bottom:1rem;">Events &amp; Publication</span>
+        <h2 class="svc-detail__title">Event Management &amp; Publication</h2>
+        <p class="svc-detail__desc">Dsectors designs and delivers the convenings and publications that turn research and programme work into shared knowledge — from a technical seminar to a fully edited, donor-ready report.</p>
+        <div class="svc-detail__list">
+          <div class="svc-detail__item">Conference and seminar design, moderation and facilitation</div>
+          <div class="svc-detail__item">Audio-visual production and event documentation</div>
+          <div class="svc-detail__item">Editorial services and report editing</div>
+          <div class="svc-detail__item">Layout, design and publication support</div>
+          <div class="svc-detail__item">Professional Bangla–English translation</div>
+          <div class="svc-detail__item">Multi-partner and stakeholder convening logistics</div>
+        </div>
+      </div>
+      <div class="svc-detail__visual svc-v--teal reveal--right reveal delay-2">
+        <div class="svc-visual-item"><div class="svc-visual-item__icon">🎤</div><div><div class="svc-visual-item__title">Full-Cycle Event Delivery</div><div class="svc-visual-item__desc">Concept, logistics, moderation and AV production under one roof</div></div></div>
+        <div class="svc-visual-item"><div class="svc-visual-item__icon">🌐</div><div><div class="svc-visual-item__title">Bangla–English Editorial</div><div class="svc-visual-item__desc">Professional translation, copyediting and report layout to donor publication standards</div></div></div>
+        <div class="svc-visual-item"><div class="svc-visual-item__icon">🤝</div><div><div class="svc-visual-item__title">Multi-Partner Convenings</div><div class="svc-visual-item__desc">Agenda design and stakeholder coordination across government, donor and civil-society participants</div></div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" aria-label="Contact CTA">
+  <div class="container">
+    <div class="cta-banner reveal--scale reveal">
+      <h2 class="cta-banner__title">Commission a Proposal</h2>
+      <p class="cta-banner__desc">
+        Share your assignment scope or Terms of Reference and we'll respond with a tailored technical and financial proposal — typically within 48 hours.
+      </p>
+      <div class="cta-banner__actions">
+        <a href="contact.html"    class="btn btn--primary">Send your ToR</a>
+        <a href="who-we-are.html" class="btn btn--glass">Meet the Team</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <a href="../index.html" class="nav__logo" style="display:inline-flex;margin-bottom:1.5rem;">
+          <img src="../images/dsectors-logo.png" alt="Dsectors Services Limited" class="nav__logo-img" style="height:56px;" />
+        </a>
+        <p class="footer__brand-desc">Fostering Research · Catalyzing Innovation · Propelling Development. Dhaka-1000, Bangladesh.</p>
+        <div class="footer__social">
+          <a href="https://facebook.com/dsectors.org" class="footer__social-link" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+          <a href="mailto:info@dsectors.org" class="footer__social-link" aria-label="Email">✉</a>
+          <a href="tel:+8801752578888" class="footer__social-link" aria-label="Phone">📞</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Navigation</div>
+        <nav class="footer__links">
+          <a href="../index.html"   class="footer__link">Home</a>
+          <a href="who-we-are.html" class="footer__link">Who We Are</a>
+          <a href="services.html"   class="footer__link">Services</a>
+          <a href="clients.html"    class="footer__link">Partners</a>
+          <a href="contact.html"    class="footer__link">Contact</a>
+        </nav>
+      </div>
+      <div>
+        <div class="footer__col-title">Service Lines</div>
+        <div class="footer__links">
+          <a href="#svc-research" class="footer__link">Research &amp; Studies</a>
+          <a href="#svc-mel"      class="footer__link">MEL &amp; Evaluation</a>
+          <a href="#svc-gender"   class="footer__link">Gender, GESI &amp; GBV</a>
+          <a href="#svc-climate"  class="footer__link">Climate &amp; Safeguards</a>
+          <a href="#svc-comms"    class="footer__link">Strategic Comms</a>
+          <a href="#svc-design"   class="footer__link">Programme Design</a>
+          <a href="#svc-capacity" class="footer__link">Capacity Building</a>
+          <a href="#svc-digital"  class="footer__link">Digital &amp; AI</a>
+          <a href="#svc-renewables" class="footer__link">Renewables &amp; Ecotourism</a>
+          <a href="#svc-events"   class="footer__link">Events &amp; Publication</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Contact</div>
+        <div class="footer__links">
+          <span class="footer__link">179/3 Fakirerpool, Motijheel</span>
+          <span class="footer__link">Dhaka-1000, Bangladesh</span>
+          <a href="tel:+8801752578888" class="footer__link">+880 1752 578888</a>
+          <a href="mailto:info@dsectors.org" class="footer__link">info@dsectors.org</a>
+          <a href="http://dsectors.org" class="footer__link" target="_blank" rel="noopener">dsectors.org</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__reg">
+        <span>© 2025 Dsectors Services Limited</span>
+        <span class="footer__reg-sep">·</span>
+        <span>Reg. No. C-187290/2023, RJSC Bangladesh</span>
+      </div>
+      <span>Companies Act (Act XVIII), 1994</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/directors.js"></script>
+<script src="../js/main.js"></script>
+<script src="/js/cms-runtime.js"></script>
+</body>
+</html>

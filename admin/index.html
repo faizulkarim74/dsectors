@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Dsectors CMS — Admin</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%231f6e6b'/><text y='23' x='6' font-size='20' font-weight='900' fill='white' font-family='Arial'>D</text></svg>" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+
+<!-- ── LOGIN ── -->
+<div id="login" class="login" hidden>
+  <form id="login-form" class="login__card">
+    <div class="login__logo">Dsectors <span>CMS</span></div>
+    <p class="login__hint">Sign in to manage site content and leads.</p>
+    <label class="field">
+      <span>Password</span>
+      <input type="password" id="login-password" autocomplete="current-password" required />
+    </label>
+    <button type="submit" class="btn btn--primary" id="login-btn">Sign In</button>
+    <div class="login__error" id="login-error"></div>
+  </form>
+</div>
+
+<!-- ── APP ── -->
+<div id="app" class="app" hidden>
+  <header class="topbar">
+    <div class="topbar__brand">Dsectors <span>CMS</span></div>
+    <nav class="topbar__tabs">
+      <button class="tab is-active" data-tab="design">Design &amp; Content</button>
+      <button class="tab" data-tab="leads">Leads <span class="badge" id="leads-badge" hidden>0</span></button>
+    </nav>
+    <div class="topbar__actions">
+      <span id="save-status" class="save-status"></span>
+      <button class="btn btn--ghost" id="discard-btn" hidden>Discard</button>
+      <button class="btn btn--primary" id="save-btn" disabled>Save changes</button>
+      <button class="btn btn--ghost" id="logout-btn">Log out</button>
+    </div>
+  </header>
+
+  <!-- DESIGN TAB -->
+  <main class="workspace" data-panel="design">
+    <div class="editor">
+      <div class="editor__toolbar">
+        <label class="editor__page">
+          Page:
+          <select id="page-select">
+            <option value="/index.html">Home</option>
+            <option value="/pages/who-we-are.html">Who We Are</option>
+            <option value="/pages/services.html">Services</option>
+            <option value="/pages/clients.html">Partners</option>
+            <option value="/pages/contact.html">Contact</option>
+          </select>
+        </label>
+        <div class="editor__tip">Click any highlighted element in the preview to edit it.</div>
+      </div>
+      <div class="editor__frame-wrap">
+        <iframe id="preview" class="editor__frame" title="Site preview"></iframe>
+      </div>
+    </div>
+
+    <aside class="inspector" id="inspector">
+      <div class="inspector__empty" id="inspector-empty">
+        <div class="inspector__empty-icon">🎯</div>
+        <p>Select an element in the preview to edit its text, image, colour, size and animation.</p>
+      </div>
+
+      <div class="inspector__body" id="inspector-body" hidden>
+        <div class="inspector__target" id="inspector-target"></div>
+
+        <!-- TEXT -->
+        <section class="group" id="grp-text">
+          <h4>Text</h4>
+          <textarea id="in-text" rows="3" placeholder="Element text"></textarea>
+        </section>
+
+        <!-- IMAGE -->
+        <section class="group" id="grp-image" hidden>
+          <h4>Image</h4>
+          <div class="img-preview"><img id="in-img-preview" alt="" /></div>
+          <input type="file" id="in-img-file" accept="image/*" />
+          <input type="url" id="in-img-url" placeholder="…or paste an image URL" />
+        </section>
+
+        <!-- TYPOGRAPHY / COLOUR -->
+        <section class="group" id="grp-style">
+          <h4>Appearance</h4>
+          <div class="row">
+            <label>Text colour <input type="color" id="in-color" /></label>
+            <label>Background <input type="color" id="in-bg" /></label>
+          </div>
+          <label class="slider">
+            Font size <output id="in-size-out">—</output>
+            <input type="range" id="in-size" min="10" max="120" step="1" />
+          </label>
+          <div class="row">
+            <label>Weight
+              <select id="in-weight">
+                <option value="">default</option>
+                <option value="300">300</option>
+                <option value="400">400</option>
+                <option value="500">500</option>
+                <option value="600">600</option>
+                <option value="700">700</option>
+                <option value="800">800</option>
+                <option value="900">900</option>
+              </select>
+            </label>
+            <label>Align
+              <select id="in-align">
+                <option value="">default</option>
+                <option value="left">left</option>
+                <option value="center">center</option>
+                <option value="right">right</option>
+              </select>
+            </label>
+          </div>
+        </section>
+
+        <!-- ANIMATION (section-level) -->
+        <section class="group" id="grp-anim" hidden>
+          <h4>Section animation</h4>
+          <label>Type
+            <select id="in-anim">
+              <option value="none">none</option>
+              <option value="fade-in">fade in</option>
+              <option value="fade-up">fade up</option>
+              <option value="fade-down">fade down</option>
+              <option value="slide-left">slide from right</option>
+              <option value="slide-right">slide from left</option>
+              <option value="zoom-in">zoom in</option>
+            </select>
+          </label>
+          <label class="slider">Duration <output id="in-dur-out">700ms</output>
+            <input type="range" id="in-dur" min="150" max="2000" step="50" value="700" />
+          </label>
+          <label class="slider">Delay <output id="in-delay-out">0ms</output>
+            <input type="range" id="in-delay" min="0" max="1500" step="50" value="0" />
+          </label>
+          <button class="btn btn--ghost btn--sm" id="anim-replay">▶ Replay</button>
+        </section>
+
+        <button class="btn btn--ghost btn--sm reset-el" id="reset-el">Reset this element</button>
+      </div>
+    </aside>
+  </main>
+
+  <!-- LEADS TAB -->
+  <main class="workspace workspace--leads" data-panel="leads" hidden>
+    <div class="leads">
+      <div class="leads__head">
+        <h2>Leads</h2>
+        <div class="leads__tools">
+          <input type="search" id="leads-search" placeholder="Search leads…" />
+          <button class="btn btn--ghost" id="leads-refresh">Refresh</button>
+          <button class="btn btn--ghost" id="leads-export">Export CSV</button>
+        </div>
+      </div>
+      <div class="leads__list" id="leads-list"></div>
+      <div class="leads__empty" id="leads-empty" hidden>No leads yet.</div>
+    </div>
+  </main>
+</div>
+
+<script src="admin.js"></script>
+</body>
+</html>
