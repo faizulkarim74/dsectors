@@ -133,42 +133,5 @@ He has served as Agreement/Contracting Officer's Representative (AOR/COR), led P
       { period: '2009–2010', role: 'Programme Officer', org: 'Oxfam GB — DIPECHO V (ECHO-funded)' },
       { period: '2003–2009', role: 'Senior Programme Officer', org: 'NGO Forum for Public Health' }
     ]
-  },
-
-  farhana: {
-    name: 'Farhana Hafiz',
-    role: 'Director',
-    title: 'Gender, Climate Resilience & Humanitarian Action',
-    institution: 'National Consultant, UN Women Bangladesh | Former Regional Gender Advisor, Nutrition International',
-    exp: '27',
-    expPct: 98,
-    photo: '../images/Farhana Hafiz.jpg',
-    domain: 'Gender-responsive DRR, climate resilience, humanitarian coordination, GBV, PSEA, safeguarding',
-    tags: ['UN Women', 'Gender & DRR', 'Humanitarian', 'Climate', 'GBV/PSEA', 'Oxfam'],
-    bio: `A gender and humanitarian leader with 27 years of experience in gender-responsive disaster risk reduction, climate change adaptation, humanitarian coordination and human rights. She has advised the Ministry of Disaster Management and Relief, Ministry of Women and Children Affairs and the Planning Commission on gender-responsive DRR and national development planning.
-    
-She contributed to the Gender-Responsive Guidelines for the Standing Orders on Disaster (SoD) 2020. She initiated the first women-focused mobile money transfer (bKash) programme in humanitarian response in Bangladesh. She holds an MSS in Sociology (First Class) from the University of Dhaka and completed the Foundation Course on Gender and Development at the Royal Tropical Institute (KIT), Netherlands.`,
-    engagements: [
-      'National Consultant, UN Women Bangladesh (2025–present) — Women\'s Resilience to Climate Change and DRR; institutional capacity strengthening of government stakeholders',
-      'Regional Gender Equality Advisor – Asia, Nutrition International (2023–2025) — gender-transformative and GBV-integrated nutrition programming across the Asia region',
-      'Gender Mainstreaming Analyst, National Resilience Programme, UN Women (2018–2022) — gender, GBV and PSEA across five sub-projects with MoDMR and MoWCA',
-      'International Consultant, Gender and Humanitarian Specialist, UN Women (global, 2015–2016) — represented UN Women in the Joint Post-Conflict Needs Assessment in Yemen',
-      'Gender Change Lead for Humanitarian, Oxfam Asia Regional Centre (2013–2015) — Technical Advisor, INCRISD South Asia DIPECHO VII programme across six countries',
-      'Emergency Food Security and Livelihood Coordinator, Oxfam Bangladesh (2011–2013) — NARRI Consortium, ECHO & DFID-funded; initiated first bKash women-focused cash transfer in humanitarian response',
-      'Contributed to Gender-Responsive Guidelines for Standing Orders on Disaster (SoD) 2020',
-      'WE CAN Campaign, Oxfam GB (2004–2011) — mobilising one million change-makers and 1,500 educational institutions to end violence against women'
-    ],
-    career: [
-      { period: '2023–Present', role: 'Director', org: 'Dsectors Services Limited' },
-      { period: '2025–Present', role: 'National Consultant', org: 'UN Women Bangladesh' },
-      { period: '2023–2025', role: 'Regional Gender Equality Advisor – Asia', org: 'Nutrition International' },
-      { period: '2018–2022', role: 'Gender Mainstreaming Analyst, NRP', org: 'UN Women Bangladesh' },
-      { period: '2017–2018', role: 'Individual Consultant', org: 'UNDP Bangladesh' },
-      { period: '2015–2016', role: 'International Consultant, Gender & Humanitarian', org: 'UN Women (Global)' },
-      { period: '2013–2015', role: 'Gender Change Lead for Humanitarian', org: 'Oxfam Asia Regional Centre' },
-      { period: '2011–2013', role: 'Emergency Food Security & Livelihood Coordinator', org: 'Oxfam Bangladesh (NARRI Consortium)' },
-      { period: '2004–2011', role: 'Gender Programme Coordinator / Programme Officer', org: 'Oxfam GB Bangladesh' },
-      { period: '1999–2004', role: 'Programme Officer', org: 'Steps Towards Development' }
-    ]
   }
 };
