@@ -730,13 +730,14 @@ input, textarea, select { font-family: inherit; }
 .directors-intro p { font-size:1.05rem; color:var(--text-muted); max-width:720px; margin:0 auto; line-height:1.9; }
 
 /* Card layout */
-.directors__featured { display:grid; grid-template-columns:1fr 1fr; gap:2.5rem; margin-bottom:2.5rem; }
+.directors__featured { display:grid; grid-template-columns:1fr 1fr; grid-auto-rows: 1fr; gap:2.5rem; margin-bottom:2.5rem; }
 .directors__row      { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; }
 
 /* The card */
 .dir-card {
   position:relative; background:var(--g-card); border:1px solid var(--border);
   border-radius:var(--r-md); overflow:hidden; transition:all .35s var(--ease-out-expo); cursor:default;
+  display: flex; flex-direction: column; height: 100%;
 }
 .dir-card:hover { transform:translateY(-5px); border-color:rgba(33,117,109,0.35); box-shadow:var(--sh-card); }
 
@@ -766,7 +767,7 @@ input, textarea, select { font-family: inherit; }
 .dir-card__photo-side { position:absolute; top:1.25rem; right:1.25rem; display:flex; flex-direction:column; gap:.5rem; }
 
 /* Body */
-.dir-card__body  { padding:1.75rem; position:relative; z-index:1; }
+.dir-card__body  { padding:1.75rem; position:relative; z-index:1; flex-grow: 1; display: flex; flex-direction: column; }
 .dir-card__role-badge { margin-bottom:.75rem; }
 .dir-card__name { font-family:var(--f-sans); font-size:1.35rem; font-weight:800; color:var(--text-bright); letter-spacing:-.03em; margin-bottom:.2rem; }
 .dir-card--standard .dir-card__name { font-size:1.15rem; }
@@ -779,7 +780,7 @@ input, textarea, select { font-family: inherit; }
 .dir-card--featured .dir-card__summary { -webkit-line-clamp:4; }
 
 /* Footer */
-.dir-card__footer { display:flex; align-items:center; justify-content:space-between; padding:1.1rem 1.75rem; border-top:1px solid var(--border); background:rgba(26,26,26,.02); }
+.dir-card__footer { display:flex; align-items:center; justify-content:space-between; padding:1.1rem 1.75rem; border-top:1px solid var(--border); background:rgba(26,26,26,.02); margin-top: auto; }
 .dir-card__exp { display:flex; align-items:center; gap:.5rem; font-size:.75rem; font-weight:700; color:var(--text-dim); font-family:var(--f-mono); }
 .dir-card__years-icon { font-size:.9rem; }
 .dir-card__exp-bar { width:40px; height:3px; background:var(--surface-3); border-radius:var(--r-full); overflow:hidden; }
